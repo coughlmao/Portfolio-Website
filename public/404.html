@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/Portfolio-Website/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      // Redirect SPA 404s to the index page with the original URL preserved as a query parameter
+      const path = window.location.pathname.replace(/\/$/, "");
+      const queryString = window.location.search;
+      
+      if (path && path !== "/Portfolio-Website" && !path.includes(".")) {
+        window.location.replace(
+          "/Portfolio-Website/index.html?redirect=" + encodeURIComponent(path + queryString)
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
